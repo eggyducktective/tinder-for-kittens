@@ -8,6 +8,5 @@ delete "/login" => "session#destroy"
 
 resources :users
 
-get "/profile" => "users#profile
-"
+get "/profile" => "users#profile"
 end

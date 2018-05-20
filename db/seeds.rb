@@ -18,3 +18,21 @@ u3 = User.create email: 'spaceteddy@ga.com', username: 'teddyfromspace', passwor
 
 
 puts "Created #{User.all.length} users."
+
+
+puts "Create cats"
+
+Cat.destroy_all
+c1 = Cat.create name: 'Pinky', image: 'https://images.pexels.com/photos/774731/pexels-photo-774731.jpeg', bio: 'A stinky cat'
+c2 = Cat.create name: 'Fluffy', image: 'https://images.pexels.com/photos/384555/pexels-photo-384555.jpeg', bio: 'A fluffy ball of fur'
+c3 = Cat.create name: 'Uh Oh', image: 'https://images.pexels.com/photos/127028/pexels-photo-127028.jpeg', bio: 'Oopz, I did it again'
+c4 = Cat.create name: 'Rom Rom', image: 'https://images.pexels.com/photos/86243/pexels-photo-86243.jpeg', bio: 'I love you more than I can say'
+c5 = Cat.create name: 'Cool Cat', image: 'https://images.pexels.com/photos/979247/pexels-photo-979247.jpeg', bio: 'I love exercising'
+
+puts "Created #{Cat.all.length} cats."
+
+u1.cats << c1
+u2.cats << c2 << c3
+u3.cats << c4 << c5
+
+puts "created relationship between cats n users"
