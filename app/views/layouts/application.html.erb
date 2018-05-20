@@ -10,8 +10,11 @@
   </head>
 
 
-  <body>
+  <body><div class="header">
     <h1>Kitty Dating</h1>
+      <hr>
+  </div>
+    <div class="main">
     <nav>
   <% if @current_user.present? %>
     Welcome, <%= @current_user.username %>
@@ -25,5 +28,7 @@
 </nav>
 
     <%= yield %>
+  </div>
+    <div class="footer">&copy; Anna Tran. Project 1. WDI 27</div>
   </body>
 </html>
