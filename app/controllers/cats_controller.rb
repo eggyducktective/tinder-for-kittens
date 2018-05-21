@@ -1,29 +1,63 @@
 class CatsController < ApplicationController
+
+  before_action :check_if_logged_in, except: [:index, :show, :catsearch]
+  before_action :get_cat, only: [:show, :edit, :update, :destroy] # will set @cat
+  before_action :check_is_owner, only: [:edit, :update, :destroy]
+
   def new
+    @cat = Cat.new
   end
 
   def create
+    cat = Cat.new cat_params
+    cat.user = @current_user
+    cat.save
+
+    redirect_to cats_path
+
   end
 
   def show
   end
 
   def index
+    @cats = Cat.all
+
   end
 
   def edit
   end
 
   def update
+    @cat.update cat_params
+    redirect_to @cat
+  end
+
+  def destroy
+    @cat.destroy
+    redirect_to cats_path
   end
 
   def catsearch
     search_word = params[:search].to_s
     kittysearch = Cat.ransack(name_or_bio_cont_any: search_word)
     @kittyresults = kittysearch.result
+    # binding.pry
     render :results
   end
 
-  def destroy
+  private
+
+  def cat_params
+    params.require(:cat).permit(:name, :image, :bio)
   end
+
+  def get_cat
+    @cat = Cat.find params[:id]
+  end
+
+  def check_is_owner
+    redirect_to(cats_path) and return unless @current_user.id == @cat.user_id
+  end
+
 end

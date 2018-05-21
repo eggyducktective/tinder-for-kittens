@@ -1,6 +1,10 @@
-<% @kittyresults.each do |x| %>
-Cat's Name: <%= x.name %>
+<% @kittyresults.each do |kitty| %>
+Cat's Name: <%= link_to kitty.name, cat_path( kitty ) %>
 <br>
-Cat's bio: <%= x.bio %>
-<br> <br>
+<%= image_tag kitty.image %>
+
+
+<br>
+<%= kitty.bio %>
+<br>
 <% end %>

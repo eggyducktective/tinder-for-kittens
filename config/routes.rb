@@ -1,13 +1,7 @@
 Rails.application.routes.draw do
 
-  get 'cats/new'
-  get 'cats/create'
-  get 'cats/show'
-  get 'cats/index'
-  get 'cats/edit'
-  get 'cats/update'
-  get 'cats/destroy'
-root to: "pages#home"
+root to: redirect('/welcome.html')
+# root to: "pages#home"  # will use page header & footer
 
 get "/login" => "session#new" # show the log in form
 post "/login" => "session#create" # submit the login and authenticate
@@ -17,5 +11,9 @@ resources :users
 
 get "/profile" => "users#profile"
 post "/search" => "cats#catsearch"
+
+
+
+resources :cats
 
 end

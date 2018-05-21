@@ -34,9 +34,25 @@
   background-color: rgb(25, 102, 166);
 }
 img {
-  max-width: 500px;
+  max-width: 400px;
+  max-height: 300px;
+  border-radius: 70%;
 }
 
 h1, h2 {
   font-family: 'Indie Flower', cursive;
+}
+
+li {
+  list-style: none;
+}
+
+
+nav {
+  float: left;
+
+}
+
+#search {
+  float: right;
 }

@@ -1,2 +1,23 @@
-<h1>Cats#show</h1>
-<p>Find me in app/views/cats/show.html.erb</p>
+
+
+<p>Hello my name is <em><%= @cat.name %></em></p>
+<p>A little bit about myself:</p>
+<%= @cat.bio %>
+<br>
+
+<br>
+<% if @cat.image.present? %>
+<%= image_tag @cat.image %>
+<% end %>
+<br>
+
+<p>Check out my awesome owner:
+<%= link_to @cat.user.username, user_path(@cat.user) %></p>
+
+
+<br>
+<% if @current_user.present? && @cat.user == @current_user %>
+ <%=  link_to "Edit", edit_cat_path(@cat)%>
+ |
+ <%=  link_to "Delete", cat_path(@cat), method: :delete%>
+<% end %>
