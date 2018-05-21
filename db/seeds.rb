@@ -36,3 +36,28 @@ u2.cats << c2 << c3
 u3.cats << c4 << c5
 
 puts "created relationship between cats n users"
+
+
+
+Comment.destroy_all
+
+o1 = Comment.create content: 'I love this cat, this is such a gracious cat'
+o2 = Comment.create content: 'This cat is pretty average, nothing special'
+o3 = Comment.create content: 'This cat is lovely'
+o4 = Comment.create content: 'This is one fluffy cat'
+o5 = Comment.create content: 'This cat is SO FREAKING COOL'
+o6 = Comment.create content: 'This cat looks like he is always doing something naughty'
+
+puts "Created #{Comment.all.length} comments."
+
+c1.comments << o1 << o2
+c5.comments << o5 << o3
+c3.comments << o6
+c4.comments << o4
+
+
+u1.comments << o1 << o2
+u2.comments << o3
+u3.comments << o4 << o5 << o6
+
+puts "created relationship between cats and comments"

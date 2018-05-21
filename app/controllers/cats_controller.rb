@@ -42,7 +42,7 @@ class CatsController < ApplicationController
     search_word = params[:search].to_s
     kittysearch = Cat.ransack(name_or_bio_cont_any: search_word)
     @kittyresults = kittysearch.result
-    # binding.pry
+  
     render :results
   end
 
