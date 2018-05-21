@@ -1,0 +1,15 @@
+"<%= @comment.content %>"
+
+
+<br>
+This comment was made about:
+<%= link_to @comment.cat.name, cat_path(@comment.cat) %>
+
+
+
+
+<% if @current_user.present? && @comment.user == @current_user %>
+ <%=  link_to "Edit", edit_comment_path(@comment)%>
+ |
+ <%=  link_to "Delete", comment_path(@comment), method: :delete%>
+<% end %>

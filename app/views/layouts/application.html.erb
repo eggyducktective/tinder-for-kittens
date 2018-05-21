@@ -26,11 +26,12 @@
   <% end %>
 </nav>
     <div id="search">
-    <%= form_tag '/search' %>
+    <%= form_tag '/search' do %>
     <%= search_field_tag :search %>
-    <%= submit_tag 'Search' %></div>
-
-<hr>
+    <%= submit_tag 'Search Now' %>
+    <% end %>
+    </div>
+    <hr>
 
     <%= yield %>
   </div>

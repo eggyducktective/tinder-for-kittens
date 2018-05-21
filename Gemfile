@@ -54,3 +54,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # For full/quick searching a table
 gem 'ransack'
+
+gem "rails_12factor", group: :production

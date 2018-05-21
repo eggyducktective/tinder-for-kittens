@@ -15,5 +15,6 @@ post "/search" => "cats#catsearch"
 
 
 resources :cats
+resources :comments
 
 end

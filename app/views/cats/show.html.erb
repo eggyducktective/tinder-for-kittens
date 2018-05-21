@@ -15,6 +15,7 @@
 <%= link_to @cat.user.username, user_path(@cat.user) %></p>
 
 
+
 <br>
 <% if @current_user.present? && @cat.user == @current_user %>
  <%=  link_to "Edit", edit_cat_path(@cat)%>

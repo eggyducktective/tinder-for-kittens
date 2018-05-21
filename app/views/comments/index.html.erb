@@ -1,0 +1,8 @@
+<h2>See what others have to say about our cats</h2>
+<% @comments.each do |comment| %>
+<li>
+    User <%= link_to comment.user.username, user_path(comment.user) %> said:
+  <%= link_to comment.content, comment_path(comment) %>
+
+</li>
+<% end %>
