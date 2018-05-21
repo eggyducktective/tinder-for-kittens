@@ -1,7 +1,9 @@
-<h2>All Cats</h2>
+<h2>All Kitties</h2>
 
 <% @cats.each do |c| %>
+<ul>
   <li>
     <%= link_to c.name, cat_path(c) %>
   </li>
+</ul>
 <% end %>

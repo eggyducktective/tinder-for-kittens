@@ -4,6 +4,10 @@
 <br>
 This comment was made about:
 <%= link_to @comment.cat.name, cat_path(@comment.cat) %>
+<br>
+Check out the user's page.
+<%= link_to @comment.user.username, user_path(@comment.user) %>
+
 
 
 

@@ -11,6 +11,24 @@
 <% end %>
 <br>
 
+<p>What people said about me</p>
+
+<ul>
+<% @cat.comments.each do |com| %>
+<div class="comment">
+<li>
+  "<%= com.content %>". Posted by <%= link_to com.user.username, user_path(@cat.user.id) %>
+</li>
+<% end  %>
+</div>
+</ul>
+
+
+
+
+
+
+
 <p>Check out my awesome owner:
 <%= link_to @cat.user.username, user_path(@cat.user) %></p>
 
