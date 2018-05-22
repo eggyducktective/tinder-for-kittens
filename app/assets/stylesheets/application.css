@@ -43,12 +43,14 @@ h1, h2, a {
   font-family: 'Indie Flower', cursive;
 }
 
+h1 {
+  text-shadow: 2px 2px grey;
+}
+
 li {
   list-style: none;
   font-style: italic;
-
 }
-
 
 nav {
   float: left;
@@ -62,8 +64,13 @@ a:hover{
   float: right;
 }
 
-
-ul, ol {
+ul, ol, .hobby {
   padding-left: 0;
   padding-right: 0;
+}
+
+.hobby {
+  border: 1px solid grey;
+  width: 250px;
+  margin: 0 auto;
 }

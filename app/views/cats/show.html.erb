@@ -1,27 +1,33 @@
 <p>Hello my name is
   <em><%= @cat.name %></em>
 </p>
-<p>A little bit about myself:</p>
-<%= @cat.bio %>
-<br>
+<p>A little bit about myself:
+  <%= @cat.bio %></p>
+
+<p>My hobbies include:</p>
+<ul>
+  <% @cat.hobbies.each do |h| %>
+    <li id="hobby_id"><%= h.name %></li>
+  <% end %>
+</ul>
 
 <br>
 <% if @cat.image.present? %>
   <%= cl_image_tag @cat.image %>
 <% end %>
 <br>
-
-<p>What people said about me</p>
-<ul>
-  <% @cat.comments.each do |com| %>
-    <div class="comment">
+<% if @cat.comments.present? %>
+  <p>What people said about me</p>
+  <ul>
+    <% @cat.comments.each do |com| %>
       <li>
         "<%= com.content %>". Posted by
         <%= link_to com.user.username, user_path(@cat.user.id) %>
       </li>
     <% end  %>
-  </div>
-</ul>
+  </ul>
+<% end %>
+
 <ol>Wanna post something about me?
   <%= form_tag cat_path do %>
   <%= search_field_tag :comment %>
@@ -32,7 +38,6 @@
 
   <%= link_to @cat.user.username, user_path(@cat.user) %></p>
 
-<br>
 <% if @current_user.present? && @cat.user == @current_user %>
   <%= link_to "Edit", edit_cat_path(@cat)%>
   |

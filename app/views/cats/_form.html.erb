@@ -5,20 +5,23 @@
 <%= f.text_field :name %>
 <br>
 
-<%= f.label :bio %>
+<%= f.label :bio, 'Description' %>
 <%= f.text_field :bio %>
 <br>
 
-<%= f.label "Cat Image:" %>
+<%= f.label :image, 'Image' %>
 <%= f.cl_image_upload :image %>
 <br>
 
-<% Hobby.all.each do |h| %>
+<%= f.label :hobbies, 'Select hobbies from this list:' %>
+<br>
+<div class="hobby"><% Hobby.all.each do |h| %>
 
   <%= check_box_tag('hobbies[]', h.id, multiple: true) %>
   <%= label_tag h.name %><br>
 <% end %>
+</div>
 
 
-<%= f.submit "Create Animal" %>
+<%= f.submit "Create Kitty" %>
 <% end  %>

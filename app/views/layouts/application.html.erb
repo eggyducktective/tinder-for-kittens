@@ -12,6 +12,7 @@
 
   <body><div class="header">
     <h1>❤️ Kitty Dating ❤️ </h1>
+    <hr>
 
   </div>
     <div class="main">
@@ -22,6 +23,8 @@
     |
     <%= link_to 'All Kitties', cats_path %>
     |
+    <%= link_to 'Add A New Kitty', new_cat_path %>
+
   <% else %>
     <%= link_to 'Login', login_path %>
     |
@@ -35,8 +38,9 @@
     <%= submit_tag 'Search Now' %>
     <% end %>
     </div>
-    <hr>
 
+<br>
+<hr>
     <%= yield %>
   </div>
     <div class="footer">&copy; Anna Tran. Project 1. WDI 27</div>
