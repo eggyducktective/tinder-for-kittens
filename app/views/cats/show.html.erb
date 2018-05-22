@@ -7,7 +7,7 @@
 
 <br>
 <% if @cat.image.present? %>
-  <%= image_tag @cat.image %>
+  <%= cl_image_tag @cat.image %>
 <% end %>
 <br>
 
@@ -21,15 +21,13 @@
       </li>
     <% end  %>
   </div>
-  <br>
-  Wanna post something about me?
+</ul>
+<ol>Wanna post something about me?
   <%= form_tag cat_path do %>
   <%= search_field_tag :comment %>
   <%= submit_tag 'Post Comment' %>
 <% end %>
-</ul>
 
-<li>
 <p>Check out my awesome owner:
 
   <%= link_to @cat.user.username, user_path(@cat.user) %></p>
@@ -40,4 +38,4 @@
   |
   <%= link_to "Delete", cat_path(@cat), method: :delete%>
 <% end %>
-</li>
+</ol>

@@ -23,7 +23,7 @@
    min-height: 100vh;
  }
 
- div, li, ul, a {
+ div, li, ul, a, ol {
    text-align: center;
  }
 .main {
@@ -63,8 +63,7 @@ a:hover{
 }
 
 
-ul {
+ul, ol {
   padding-left: 0;
   padding-right: 0;
-
 }

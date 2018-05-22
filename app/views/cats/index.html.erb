@@ -1,9 +1,8 @@
 <h2>All Kitties</h2>
-
-<% @cats.each do |c| %>
 <ul>
-  <li>
-    <%= link_to c.name, cat_path(c) %>
-  </li>
-</ul>
+<% @cats.each do |cat| %>
+<li>
+  <%= link_to(cat.name, cat) %>
+</li>
 <% end %>
+</ul>

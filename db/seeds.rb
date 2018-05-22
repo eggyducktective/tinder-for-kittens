@@ -71,7 +71,7 @@ h4 = Hobby.create name: 'Stalking human'
 h5 = Hobby.create name: 'Purring'
 h6 = Hobby.create name: 'Hunting mice'
 h7 = Hobby.create name: 'Getting stuck in random places'
-h8 = Hobby.create name: 'Go on fishy playdates'
+h8 = Hobby.create name: 'Going on fishy playdates'
 h9 = Hobby.create name: 'Torturing dogs'
 h10 = Hobby.create name: 'Being evil'
 
