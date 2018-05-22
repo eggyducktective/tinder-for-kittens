@@ -1,27 +1,27 @@
 
 <%= form_for(@cat, :html => {:multipart => true}) do |f| %>
 
-<%= f.label :name %>
-<%= f.text_field :name %>
-<br>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <br>
 
-<%= f.label :bio, 'Description' %>
-<%= f.text_field :bio %>
-<br>
+    <%= f.label :bio, 'Description' %>
+    <%= f.text_field :bio %>
+    <br>
 
-<%= f.label :image, 'Image' %>
-<%= f.cl_image_upload :image %>
-<br>
+    <%= f.label :image, 'Image' %>
+    <%= f.cl_image_upload :image %>
+    <br>
 
-<%= f.label :hobbies, 'Select hobbies from this list:' %>
-<br>
-<div class="hobby"><% Hobby.all.each do |h| %>
+    <%= f.label :hobbies, 'Select hobbies from this list:' %>
+    <br>
+    <div class="hobby"><% Hobby.all.each do |h| %>
 
-  <%= check_box_tag('hobbies[]', h.id, multiple: true) %>
-  <%= label_tag h.name %><br>
-<% end %>
-</div>
+      <%= check_box_tag('hobbies[]', h.id, multiple: true) %>
+      <%= label_tag h.name %><br>
+    <% end %>
+    </div>
 
 
-<%= f.submit "Create Kitty" %>
+    <%= f.submit %>
 <% end  %>

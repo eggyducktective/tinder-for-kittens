@@ -1,8 +1,26 @@
 <h2>All Kitties</h2>
-<ul>
-<% @cats.each do |cat| %>
-<li>
-  <%= link_to(cat.name, cat) %>
-</li>
-<% end %>
-</ul>
+
+<div class="row">
+
+  <div class="indexcolumn">
+      <div class="kittyfact">
+        Random Kitty Fact:<br>
+      <%= @fact %>
+      </div>
+  </div>
+
+  <div class="resultcolumn">
+    <% @cats.each do |cat| %>
+      <div class="kittyresult">
+        <div class="kittyimage">
+          <%= image_tag cat.image, :class => "kittyavatar" %>
+        </div>
+        <div class="kittytext">
+          Name: <%= link_to cat.name, cat_path(cat) %> <br>
+          Bio: <%= cat.bio %>
+        </div>
+      </div>
+      <br>
+    <% end %>
+  </div>
+</div>

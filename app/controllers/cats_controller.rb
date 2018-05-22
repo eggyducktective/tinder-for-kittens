@@ -28,13 +28,16 @@ class CatsController < ApplicationController
     @cat = Cat.find(params[:id])
   end
 
-  def show; end
+  def show
+  end
 
   def index
     @cats = Cat.all
+    @fact = random_cat_fact
   end
 
-  def edit; end
+  def edit
+  end
 
   def update
     cat = Cat.find(params[:id])
@@ -54,8 +57,8 @@ class CatsController < ApplicationController
   end
 
   def catsearch
-    search_word = params[:search].to_s
-    kittysearch = Cat.ransack(name_or_bio_cont_any: search_word)
+    @search_word = params[:search].to_s
+    kittysearch = Cat.ransack(name_or_bio_cont_any: @search_word.split(" "))
     @kittyresults = kittysearch.result
 
     render :results
@@ -68,6 +71,12 @@ class CatsController < ApplicationController
     com.cat_id = params[:id].to_s
     com.save
     redirect_to cat_path(get_cat.id)
+  end
+
+  def random_cat_fact
+      url = "https://catfact.ninja/fact"
+      result = HTTParty.get( url )
+      result['fact']
   end
 
   private

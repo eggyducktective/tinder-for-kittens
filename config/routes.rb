@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
 root to: redirect('/welcome.html')
 # root to: "pages#home"  # will use page header & footer
 
@@ -17,5 +18,5 @@ post "/cats/:id" => "cats#comment"
 
 resources :cats
 resources :comments
-
+resources :hobbies
 end

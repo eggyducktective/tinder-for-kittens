@@ -60,3 +60,4 @@ gem "rails_12factor", group: :production
 gem 'rails_12factor', group: :production
 gem 'pry-rails'
 gem 'cloudinary'
+gem 'httparty'

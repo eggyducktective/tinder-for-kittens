@@ -1,15 +1,27 @@
-<h3>Results</h3>
-<ul>
-  <% @kittyresults.each do |kitty| %>
-    <li>
-      Kitty's Name:
-      <%= link_to kitty.name, cat_path( kitty ) %>
-    </li>
-    <br>
-    <%= image_tag kitty.image %>
+<h3>Results for: "<%= @search_word %>"</h3>
+<div class="indexcolumn">
+  Criteria for for purrrfect match:
+  <br>
+  <br>
+  Criteria:<br>
+  is evil<br>
+  hates humans<br>
+  All<br>
+  searchbox (ENTER)
+  (place previously entered search criteria)
+</div>
 
-    <br>
-    <%= kitty.bio %>
+<div class="resultcolumn">
+  <% @kittyresults.each do |cat| %>
+    <div class="kittyresult">
+      <div class="kittyimage">
+        <%= image_tag cat.image, :class => "kittyavatar" %>
+      </div>
+      <div class="kittytext">
+        Name: <%= link_to cat.name, cat_path(cat) %> <br>
+        Bio: <%= cat.bio %>
+      </div>
+    </div>
     <br>
   <% end %>
-</ul>
+</div>
