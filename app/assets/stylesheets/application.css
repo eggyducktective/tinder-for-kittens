@@ -23,7 +23,7 @@
    min-height: 100vh;
  }
 
- div {
+ div, li, ul, a {
    text-align: center;
  }
 .main {
@@ -46,6 +46,7 @@ h1, h2, a {
 li {
   list-style: none;
   font-style: italic;
+
 }
 
 

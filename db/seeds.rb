@@ -60,4 +60,27 @@ u1.comments << o1 << o2
 u2.comments << o3
 u3.comments << o4 << o5 << o6
 
-puts "created relationship between cats and comments"
+puts "Created relationship between cats and comments"
+
+Hobby.destroy_all
+
+h1 = Hobby.create name: 'Exercising'
+h2 = Hobby.create name: 'Sleeping'
+h3 = Hobby.create name: 'Chewing on random items'
+h4 = Hobby.create name: 'Stalking human'
+h5 = Hobby.create name: 'Purring'
+h6 = Hobby.create name: 'Hunting mice'
+h7 = Hobby.create name: 'Getting stuck in random places'
+h8 = Hobby.create name: 'Go on fishy playdates'
+h9 = Hobby.create name: 'Torturing dogs'
+h10 = Hobby.create name: 'Being evil'
+
+puts "Created #{Hobby.all.length} hobbies."
+
+c1.hobbies << h1
+c2.hobbies << h8 << h9
+c3.hobbies << h3 << h7
+c4.hobbies << h4 << h5 << h6
+c5.hobbies << h10 << h9 << h2
+
+puts "Created relationship between cats and hobbies"

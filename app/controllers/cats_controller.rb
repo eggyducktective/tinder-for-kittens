@@ -13,6 +13,10 @@ class CatsController < ApplicationController
     cat.user = @current_user
     cat.save
 
+    params[:hobbies].each do |hobby_id|
+      cat.hobbies <<  Hobby.find( hobby_id )
+    end
+
     redirect_to cats_path
 
   end

@@ -1,49 +1,43 @@
-
-
-<p>Hello my name is <em><%= @cat.name %></em></p>
+<p>Hello my name is
+  <em><%= @cat.name %></em>
+</p>
 <p>A little bit about myself:</p>
 <%= @cat.bio %>
 <br>
 
 <br>
 <% if @cat.image.present? %>
-<%= image_tag @cat.image %>
+  <%= image_tag @cat.image %>
 <% end %>
 <br>
 
 <p>What people said about me</p>
-
 <ul>
-<% @cat.comments.each do |com| %>
-<div class="comment">
-<li>
-  "<%= com.content %>". Posted by <%= link_to com.user.username, user_path(@cat.user.id) %>
-</li>
-<% end  %>
-
-</div>
-<p>Wanna post something about me?</p>
-<%= form_tag cat_path do %>
-<%= search_field_tag :comment %>
-<%= submit_tag 'Post Comment' %>
+  <% @cat.comments.each do |com| %>
+    <div class="comment">
+      <li>
+        "<%= com.content %>". Posted by
+        <%= link_to com.user.username, user_path(@cat.user.id) %>
+      </li>
+    <% end  %>
+  </div>
+  <br>
+  Wanna post something about me?
+  <%= form_tag cat_path do %>
+  <%= search_field_tag :comment %>
+  <%= submit_tag 'Post Comment' %>
 <% end %>
-
 </ul>
 
-
-
-
-
-
-
+<li>
 <p>Check out my awesome owner:
-<%= link_to @cat.user.username, user_path(@cat.user) %></p>
 
-
+  <%= link_to @cat.user.username, user_path(@cat.user) %></p>
 
 <br>
 <% if @current_user.present? && @cat.user == @current_user %>
- <%=  link_to "Edit", edit_cat_path(@cat)%>
- |
- <%=  link_to "Delete", cat_path(@cat), method: :delete%>
+  <%= link_to "Edit", edit_cat_path(@cat)%>
+  |
+  <%= link_to "Delete", cat_path(@cat), method: :delete%>
 <% end %>
+</li>
