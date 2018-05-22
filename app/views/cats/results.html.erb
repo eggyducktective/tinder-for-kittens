@@ -1,10 +1,15 @@
-<% @kittyresults.each do |kitty| %>
-Cat's Name: <%= link_to kitty.name, cat_path( kitty ) %>
-<br>
-<%= image_tag kitty.image %>
+<h3>Results</h3>
+<ul>
+  <% @kittyresults.each do |kitty| %>
+    <li>
+      Kitty's Name:
+      <%= link_to kitty.name, cat_path( kitty ) %>
+    </li>
+    <br>
+    <%= image_tag kitty.image %>
 
-
-<br>
-<%= kitty.bio %>
-<br>
-<% end %>
+    <br>
+    <%= kitty.bio %>
+    <br>
+  <% end %>
+</ul>

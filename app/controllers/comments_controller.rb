@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   before_action :check_if_logged_in, except: [:index, :show]
-  before_action :get_comment, only: [:show, :edit, :update, :destroy] # will set @mixtape
+  before_action :get_comment, only: [:show, :edit, :update, :destroy]
   before_action :check_is_owner, only: [:edit, :update, :destroy]
 
   def new
@@ -31,8 +31,9 @@ class CommentsController < ApplicationController
   end
 
   private
+
   def comment_params
-    params.require(:comment).permit(:content)
+    params.require(:comment).permit(:content, :user_id, :cat_id)
   end
 
   def get_comment

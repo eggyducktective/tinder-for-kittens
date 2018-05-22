@@ -39,18 +39,18 @@ img {
   border-radius: 70%;
 }
 
-h1, h2 {
+h1, h2, a {
   font-family: 'Indie Flower', cursive;
 }
 
 li {
   list-style: none;
+  font-style: italic;
 }
 
 
 nav {
   float: left;
-
 }
 
 a:hover{
@@ -65,8 +65,5 @@ a:hover{
 ul {
   padding-left: 0;
   padding-right: 0;
-}
 
-.comment {
-  display: inline-block;
 }

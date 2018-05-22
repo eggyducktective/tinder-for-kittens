@@ -42,8 +42,17 @@ class CatsController < ApplicationController
     search_word = params[:search].to_s
     kittysearch = Cat.ransack(name_or_bio_cont_any: search_word)
     @kittyresults = kittysearch.result
-  
+
     render :results
+  end
+
+  def comment
+    com = Comment.new
+    com.content = params[:comment].to_s
+    com.user_id = @current_user.id
+    com.cat_id = params[:id].to_s
+    com.save
+    redirect_to cat_path(get_cat.id)
   end
 
   private

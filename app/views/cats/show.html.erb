@@ -20,7 +20,14 @@
   "<%= com.content %>". Posted by <%= link_to com.user.username, user_path(@cat.user.id) %>
 </li>
 <% end  %>
+
 </div>
+<p>Wanna post something about me?</p>
+<%= form_tag cat_path do %>
+<%= search_field_tag :comment %>
+<%= submit_tag 'Post Comment' %>
+<% end %>
+
 </ul>
 
 
