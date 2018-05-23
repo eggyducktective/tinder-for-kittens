@@ -1,4 +1,11 @@
+
+
+<% if @kittyresults.present? %>
 <h3>Results for: "<%= @search_word %>"</h3>
+<% else %>
+We found no match for "<%= @search_word %>"
+<% end %>
+
 <div class="indexcolumn">
   Criteria for for purrrfect match:
   <br>

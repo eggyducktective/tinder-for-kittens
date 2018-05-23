@@ -1,5 +1,6 @@
+<h3>Great to see you here
+I am <%= @user.username %></h3>
 
-<br>
 <p>My GREATEST love:</p>
 
   <% @user.cats.each do |cat| %>
@@ -7,3 +8,41 @@
     <strong><%= link_to cat.name, cat_path(cat)  %></strong>
   </li>
   <% end %>
+
+
+  <style>
+  /* Always set the map height explicitly to define the size of the div
+   * element that contains the map. */
+  #map {
+    height: 100%;
+    overflow: show;
+    /* width: 50%; */
+  }
+  /* Optional: Makes the sample page fill the window. */
+  html, body {
+    height: 100%;
+    margin: 2px;
+    padding: 2px;
+  }
+</style>
+<p id="notice"><%= notice %></p>
+
+
+<div id="map"></div>
+<script>
+function initMap() {
+  var myLatLng = {lat: <%= @user.latitude %>, lng: <%= @user.longitude %> };
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 14,
+    center: myLatLng
+  });
+  var marker = new google.maps.Marker({
+    position: myLatLng,
+    map: map,
+    title: 'Hello World!'
+  });
+}
+</script>
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOw2CG8SFq1XvvFn2tSUnf8sLMjFZw5as&callback=initMap">
+    </script>

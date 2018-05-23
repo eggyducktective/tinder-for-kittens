@@ -12,9 +12,9 @@ puts "Create Users"
 
 User.destroy_all
 
-u1 = User.create email: 'ben@ga.com', username: 'bearmaster', password: 'chicken'
-u2 = User.create email: 'anh@ga.com', username: 'eggyducktective', password: 'chicken'
-u3 = User.create email: 'spaceteddy@ga.com', username: 'teddyfromspace', password: 'chicken'
+u1 = User.create email: 'ben@ga.com', username: 'bearmaster', password: 'chicken', address: '1 Market street, Sydney'
+u2 = User.create email: 'anh@ga.com', username: 'eggyducktective', password: 'chicken', address: '569 George street, Sydney'
+u3 = User.create email: 'spaceteddy@ga.com', username: 'teddyfromspace', password: 'chicken', address: '110 William Hart Cres, Penrith, Sydney'
 
 
 puts "Created #{User.all.length} users."

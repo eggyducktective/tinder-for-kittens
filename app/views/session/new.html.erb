@@ -1,7 +1,7 @@
 <h2>Log In</h2>
 <strong><%= flash[:error] %></strong>
 
-
+<div id="form">
 <%= form_tag login_path do %>
 <%= label_tag :email %>
 <%= email_field_tag :email, nil %>
@@ -13,3 +13,4 @@
 <%= submit_tag 'Login' %>
 
 <% end %>
+</div>

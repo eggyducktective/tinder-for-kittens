@@ -57,9 +57,13 @@ class CatsController < ApplicationController
   end
 
   def catsearch
+
     @search_word = params[:search].to_s
+
     kittysearch = Cat.ransack(name_or_bio_cont_any: @search_word.split(" "))
+
     @kittyresults = kittysearch.result
+  
 
     render :results
   end

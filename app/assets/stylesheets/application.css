@@ -14,7 +14,7 @@
  *= require_self
  */
 
- @import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
 
  body {
    background-color: rgb(189, 192, 201);
@@ -27,16 +27,30 @@
    text-align: center;
  }
 .main {
-  flex-grow: 1;
+  flex: 1;
+}
+.footer {
+  border-top: 1px solid rgb(162, 162, 162);
+  padding-left: 5px;
+  padding-right: 5px;
+
 }
 
-.footer {
-  background-color: rgb(25, 102, 166);
+.copyright {
+  float: right;
+  font-weight: bold;
 }
+
+.social {
+  float: left;
+  list-style: none;
+}
+
 img {
   max-width: 400px;
   max-height: 300px;
   border-radius: 50%;
+  align: center;
 }
 
 h1, h2, a {
@@ -45,6 +59,11 @@ h1, h2, a {
 
 h1 {
   text-shadow: 2px 2px grey;
+  float: left;
+}
+
+h2 {
+  text-align: center;
 }
 
 li {
@@ -52,17 +71,20 @@ li {
   font-style: italic;
 }
 
-nav {
+#nav {
   float: left;
+}
+
+.header {
+  border-bottom: 1px solid rgb(162, 162, 162);
 }
 
 a:hover{
   color: rgb(4, 125, 125);
 }
 
-#search {
-  float: right;
-}
+
+
 
 ul, ol, .hobby {
   padding-left: 0;
@@ -81,6 +103,7 @@ ul, ol, .hobby {
     text-align: left;
     padding-left: 3%;
     padding-right: 3%;
+    padding-top: 5%;
 }
 
 .resultcolumn {
@@ -96,9 +119,10 @@ ul, ol, .hobby {
 }
 
 .kittyresult {
-  border: 2px solid black;
+  border: 2px solid rgb(87, 87, 87);
   overflow: hidden;
   padding: 10px;
+  box-shadow: 5px 6px grey;
 }
 
 
@@ -123,4 +147,23 @@ ul, ol, .hobby {
 
 .kittyfact {
   padding: 0px;
+}
+
+#search {
+  width: 1142px;
+}
+
+
+#logo {
+  float: right;
+  margin: 0 auto;
+
+  background: red;
+  background: -webkit-linear-gradient(left, orange , red, yellow, cyan, blue, violet);
+  background: -o-linear-gradient(right, orange, red, yellow, cyan, blue, violet);
+  background: -moz-linear-gradient(right, orange,  red, yellow, cyan, blue, violet);
+  background: linear-gradient(to right, orange , red, yellow, cyan, blue, violet);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 5vw;
 }
