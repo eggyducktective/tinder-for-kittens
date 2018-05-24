@@ -16,6 +16,8 @@ post "/search" => "cats#catsearch"
 
 post "/cats/:id" => "cats#comment"
 
+
+
 resources :cats
 resources :comments
 resources :hobbies

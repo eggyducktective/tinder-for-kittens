@@ -91,7 +91,6 @@ li {
 }
 
 
-
 a {
   text-transform: uppercase;
   text-decoration: none;
@@ -225,20 +224,9 @@ ul, ol, .hobby {
  #usershow {
   float: left;
   padding-left: 80px;
-
-
 }
-
-
-/* h4 {
-  float: left;
-} */
 
 
 #maptitle {
   align: center;
-}
-
-.roundimage {
-  border-radius: 50%;
 }

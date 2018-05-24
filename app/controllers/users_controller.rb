@@ -30,6 +30,7 @@ class UsersController < ApplicationController
     render :show
   end
 
+
   def edit
   end
 
