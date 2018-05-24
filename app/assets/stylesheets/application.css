@@ -22,7 +22,9 @@
   padding: 2px 2px;
 }
  body {
-   background-color: rgb(189, 192, 201);
+   /* background-color: rgb(189, 192, 201); */
+
+   background: linear-gradient(90deg, #b9deed, #efefef);
    display: flex;
    flex-direction: column;
    min-height: 100vh;
@@ -229,4 +231,91 @@ ul, ol, .hobby {
 
 #maptitle {
   align: center;
+}
+
+
+/* .grayscale {
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
+  transition: 1s;
+  animation-timing-function:ease-in-out;
+}
+
+.grayscale:hover {
+  -webkit-filter: grayscale(0);
+  filter: grayscale(0);
+} */
+
+/* figure.aden {
+  width: 404px;
+  display: inline-block;
+  transform: rotateZ(-5deg);
+} */
+
+
+figure {
+	position: relative;
+  overflow: hidden;
+  margin: 0;
+  height: 100%;
+  width: 404px;
+  filter: grayscale(.8);
+  animation: bloom ease-in-out .75s forwards;
+  animation-iteration-count: infinite;
+  /* padding-left: 500px; */
+  align: center;
+  animation: circle 10s infinite;
+
+
+}
+figure img{
+  width: 404px;
+  height: 100%;
+}
+/* figure::before {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	z-index: 2;
+	display: block;
+	content: '';
+	width: 0;
+	height: 0;
+	background: rgba(0,0,0,.2);
+	border-radius: 100%;
+	transform: translate(-50%, -50%);
+	opacity: 0;
+} */
+/* figure:hover{
+  animation: bloom ease-in-out .75s forwards;
+} */
+/* figure:hover::before {
+	animation: circle .75s;
+} */
+@keyframes bloom {
+	0% {
+		filter: grayscale(.8);
+	}
+	40% {
+		filter: grayscale(.5);
+	}
+	100% {
+		filter: grayscale(0);
+	}
+}
+@keyframes circle {
+	0% {
+		opacity: .5;
+    background: rgba(213,156,34,.2);
+
+	}
+	40% {
+		opacity: 1;
+    background: rgba(213,34,160,.2);
+	}
+	100% {
+		width: 200%;
+		height: 200%;
+		opacity: 1;
+	}
 }

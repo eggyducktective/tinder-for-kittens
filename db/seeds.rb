@@ -103,3 +103,26 @@ c9.hobbies << h3 << h5 << h2
 c10.hobbies << h1 << h6
 
 puts "Created relationship between cats and hobbies"
+
+
+
+
+Photo.destroy_all
+
+
+p1 = Photo.create image: 'https://i.ytimg.com/vi/Bohsw3nWlrc/maxresdefault.jpg'
+p2 = Photo.create image: 'https://images.backyardcatenclosures.com.au/app/uploads/2016/09/5-reasons-to-love-british-shorthair-cats1024X400.jpg'
+p3 = Photo.create image: 'https://assets.rbl.ms/4151263/980x.jpg'
+p4 = Photo.create image: 'https://i.pinimg.com/originals/0e/ed/34/0eed3407d1c05e799a21adff034248ca.jpg'
+p5 = Photo.create image: 'https://static.boredpanda.com/blog/wp-content/uploads/2016/08/12531045_1001926639898442_425771496_n-57c047e530687__700.jpg'
+
+
+
+puts "Created #{Photo.all.length} photos."
+
+
+c1.photos << p1 << p2
+c9.photos << p3 << p4
+c2.photos << p5
+
+puts "Created relationship between cats and photos."

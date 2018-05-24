@@ -33,6 +33,13 @@
   <%= submit_tag 'Post Comment' %>
 <% end %>
 
+<% if @cat.photos.present? %>
+  <p><strong>Check out more of my cute photos:</strong></p>
+  <% @cat.photos.each do |photo| %>
+    <figure><%= cl_image_tag photo.image %></figure>
+  <% end %>
+<% end %>
+
 <p>Check out my awesome owner:
 
   <%= link_to @cat.user.username, user_path(@cat.user) %></p>

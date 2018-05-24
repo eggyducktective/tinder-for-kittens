@@ -21,4 +21,6 @@ post "/cats/:id" => "cats#comment"
 resources :cats
 resources :comments
 resources :hobbies
+resources :photos
+
 end
