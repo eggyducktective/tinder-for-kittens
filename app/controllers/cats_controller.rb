@@ -40,6 +40,7 @@ class CatsController < ApplicationController
   end
 
   def update
+    # raise "hell"
     cat = Cat.find(params[:id])
     if params[:file].present?
       req = Cloudinary::Uploader.upload(params[:file])
@@ -48,6 +49,12 @@ class CatsController < ApplicationController
     end
     cat.update_attributes(cat_params)
     cat.save
+
+    cat.hobbies.destroy_all
+    params[:hobbies].each do |hobby_id|
+      cat.hobbies << Hobby.find(hobby_id)
+    end
+
     redirect_to(cat_path(cat))
   end
 
@@ -63,7 +70,7 @@ class CatsController < ApplicationController
     kittysearch = Cat.ransack(name_or_bio_cont_any: @search_word.split(" "))
 
     @kittyresults = kittysearch.result
-  
+
 
     render :results
   end

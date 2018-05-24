@@ -17,8 +17,8 @@
   <div class="hobby">
     <% Hobby.all.each do |h| %>
 
-      <%= check_box_tag('hobbies[]', h.id, multiple: true) %>
-      <%= label_tag h.name %><br>
+      <%= check_box_tag('hobbies[]', h.id, @cat.hobbies.include?( h ) , multiple: true, id: h.id) %>
+      <%= label_tag h.id, h.name %><br>
     <% end %>
   </div>
 
