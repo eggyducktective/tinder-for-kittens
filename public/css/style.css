@@ -4,6 +4,7 @@
   text-align: center;
   padding: 1px;
   font-family: 'Indie Flower', cursive;
+  background: linear-gradient(90deg, #b9deed, #efefef);
 }
 
 
@@ -124,9 +125,4 @@
 img {
   max-width: 200px;
   border-radius: 50%;
-}
-
-
-body {
-  background-color: rgb(189, 192, 201);
 }

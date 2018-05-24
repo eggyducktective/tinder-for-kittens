@@ -1,12 +1,12 @@
-
-<% if @kittyresults.present? %>
+<div class="searchresult"><% if @kittyresults.present? %>
 <h3>Results for: "<%= @search_word %>"</h3>
 <% else %>
 We found no match for "<%= @search_word %>"
 <% end %>
+</div>
 
 <div class="indexcolumn">
-Filter by hobby:
+<h4>Filter by hobby:</h4>
 <%= form_tag cats_path do %>
   <% Hobby.all.each do |h| %>
   <ul>
@@ -16,7 +16,7 @@ Filter by hobby:
     </li>
   </ul>
   <% end %>
-<%= submit_tag 'Search Kittens now' %>
+<div class="button"><%= submit_tag 'Search Kittens now' %></div>
 <% end %>
 </div>
 

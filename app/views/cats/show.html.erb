@@ -23,7 +23,7 @@
       <li>
         "<%= com.content %>". Posted by <div class="usercomment"><%= link_to com.user.username, user_path(@cat.user.id) %>
         <% if @current_user.present? && com.user == @current_user %>
-          - <%= link_to "Delete this comment", comment_path(com.id), method: :delete %>
+          - <%= link_to "Delete?", comment_path(com.id), method: :delete %></div>
         <% end  %></div>
       </li>
     <% end  %>
@@ -38,7 +38,7 @@
 
 <% if @current_user.present? && @cat.user == @current_user %>
 <br>
-<strong>Meow Meow owener, wanna show some more purrrrty pictures of me?</strong>
+<strong>Meow Meow master, wanna show some more purrrrty pictures of me?</strong>
 
 <%= form_tag(cat_path, multipart: true) do %>
   <%= file_field_tag :kittyimage %>
@@ -62,7 +62,6 @@
 <% end %>
 
 <p>Check out my awesome owner:
-
   <%= link_to @cat.user.username, user_path(@cat.user) %></p>
 
 <% if @current_user.present? && @cat.user == @current_user %>

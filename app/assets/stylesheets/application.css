@@ -79,9 +79,10 @@ h1 {
   float: left;
 }
 
-h2 {
+h2, h4 {
   text-align: center;
 }
+
 
 li {
   list-style: none;
@@ -132,6 +133,8 @@ ul, ol, .hobby {
     float: left;
     width: 60%;
     padding-right: 1%;
+    padding-top: 3%;
+    margin-right: 0;
 }
 
 /* Clear floats after the columns */
@@ -164,7 +167,7 @@ ul, ol, .hobby {
   text-align: left;
   padding-left: 10px;
   padding: 4px;
-  margin-right: 0;
+  margin-right: 0px;
 }
 
 .kittyavatar {
@@ -175,8 +178,6 @@ ul, ol, .hobby {
 
 .kittyfact {
   padding: 5px;
-
-
 }
 
 #search {
@@ -188,6 +189,9 @@ ul, ol, .hobby {
   position: relative;
   left: 30vw;
   color: red;
+}
+.button {
+  align: center;
 }
 
 
@@ -234,25 +238,6 @@ ul, ol, .hobby {
 }
 
 
-/* .grayscale {
-  -webkit-filter: grayscale(1);
-  filter: grayscale(1);
-  transition: 1s;
-  animation-timing-function:ease-in-out;
-}
-
-.grayscale:hover {
-  -webkit-filter: grayscale(0);
-  filter: grayscale(0);
-} */
-
-/* figure.aden {
-  width: 404px;
-  display: inline-block;
-  transform: rotateZ(-5deg);
-} */
-
-
 figure {
 	position: relative;
   overflow: hidden;
@@ -272,26 +257,7 @@ figure img{
   width: 404px;
   height: 100%;
 }
-/* figure::before {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	z-index: 2;
-	display: block;
-	content: '';
-	width: 0;
-	height: 0;
-	background: rgba(0,0,0,.2);
-	border-radius: 100%;
-	transform: translate(-50%, -50%);
-	opacity: 0;
-} */
-/* figure:hover{
-  animation: bloom ease-in-out .75s forwards;
-} */
-/* figure:hover::before {
-	animation: circle .75s;
-} */
+
 @keyframes bloom {
 	0% {
 		filter: grayscale(.8);
@@ -318,4 +284,12 @@ figure img{
 		height: 200%;
 		opacity: 1ai;
 	}
+}
+
+#searchresult {
+  float: right;
+}
+
+#delete_comment {
+ text-transform: lowercase;
 }
