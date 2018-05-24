@@ -1,48 +1,56 @@
-<h3>Great to see you here
-I am <%= @user.username %></h3>
+<br><br><br><br><br>
+<h3 id="usershow">Great to see you here!<br>
+I am <%= @user.username %>
 
-<p>My GREATEST love:</p>
+<p>My best friends:</p>
 
   <% @user.cats.each do |cat| %>
   <li>
     <strong><%= link_to cat.name, cat_path(cat)  %></strong>
   </li>
   <% end %>
-
+  <div id="maptitle">Hit me up when you're in the area. We can have some kitty playdate.</div>
+</h3>
 
   <style>
   /* Always set the map height explicitly to define the size of the div
    * element that contains the map. */
+
   #map {
-    height: 100%;
-    overflow: show;
-    /* width: 50%; */
+    padding-top: 10px;
+    height: 50%;
+    width: 40%;
+    float: right;
+
   }
   /* Optional: Makes the sample page fill the window. */
   html, body {
     height: 100%;
-    margin: 2px;
-    padding: 2px;
+
+    margin: 0;
+    padding: 5px 5px;
+  
   }
 </style>
-<p id="notice"><%= notice %></p>
+<script>
+  function initMap() {
+
+    var myLatLng = {lat: <%= @user.latitude %>, lng: <%= @user.longitude %> };
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 14,
+      center: myLatLng
+    });
+    var marker = new google.maps.Marker({
+      position: myLatLng,
+      map: map,
+      title: 'Hello World!'
+    });
+  }
+  </script>
 
 
 <div id="map"></div>
-<script>
-function initMap() {
-  var myLatLng = {lat: <%= @user.latitude %>, lng: <%= @user.longitude %> };
-  var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 14,
-    center: myLatLng
-  });
-  var marker = new google.maps.Marker({
-    position: myLatLng,
-    map: map,
-    title: 'Hello World!'
-  });
-}
-</script>
 <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOw2CG8SFq1XvvFn2tSUnf8sLMjFZw5as&callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDrt_cNH4vpwzTRRLsrhIFaoFvbteLEFCM&callback=initMap">
+
     </script>

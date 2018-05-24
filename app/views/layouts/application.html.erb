@@ -6,6 +6,7 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
+
     <%= javascript_include_tag 'application' %>
     <%= cloudinary_js_config %>
   </head>
@@ -19,7 +20,7 @@
           |
           <%= link_to 'All Kitties', cats_path %>
           |
-          <%= link_to 'Add A New Kitty', new_cat_path %>
+          <%= link_to 'Register A New Kitty', new_cat_path %>
 
         <% else %>
 
@@ -35,7 +36,7 @@
       <%= form_tag '/search' do %>
         <%= search_field_tag :search %>
 
-        <%= submit_tag 'Search Now' %>
+        <div id="button"><%= submit_tag 'Search Now' %></div>
       <% end %>
     </div>
     <div class="main">
@@ -43,7 +44,8 @@
 
     <%= yield %>
 </div>
-
+<br>
+<br>
 
     <div class="footer">
       <div class="social">

@@ -1,9 +1,10 @@
-
 <%= @hobby.name %>
 
 <p>Kitties with the same hobbies</p>
 <ul>
   <% @hobby.cats.each do |cat| %>
-  <%= link_to cat.name, cat_path(cat) %>
+    <li>
+      <%= link_to cat.name, cat_path(cat) %>
+    </li>
   <% end %>
 </ul>

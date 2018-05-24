@@ -12,19 +12,34 @@
  *
  *= require_tree .
  *= require_self
+ *= require mapbox
  */
 
 @import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+@import url('https://fonts.googleapis.com/css?family=Source+Serif+Pro');
 
+* {
+  padding: 2px 2px;
+}
  body {
    background-color: rgb(189, 192, 201);
    display: flex;
    flex-direction: column;
    min-height: 100vh;
+   font-family: 'Source Serif Pro', serif;
+
  }
 
  div, li, ul, a, ol {
    text-align: center;
+
+ }
+
+ .header {
+   border-bottom: 1px solid rgb(162, 162, 162);
+   background: black;
+   color: white;
+
  }
 .main {
   flex: 1;
@@ -33,7 +48,8 @@
   border-top: 1px solid rgb(162, 162, 162);
   padding-left: 5px;
   padding-right: 5px;
-
+  color: white;
+  background: black;
 }
 
 .copyright {
@@ -49,11 +65,10 @@
 img {
   max-width: 400px;
   max-height: 300px;
-  border-radius: 50%;
   align: center;
 }
 
-h1, h2, a {
+h1, h2 {
   font-family: 'Indie Flower', cursive;
 }
 
@@ -68,23 +83,29 @@ h2 {
 
 li {
   list-style: none;
-  font-style: italic;
+
 }
 
 #nav {
   float: left;
 }
 
-.header {
-  border-bottom: 1px solid rgb(162, 162, 162);
+
+
+a {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: rgb(221, 112, 0);
 }
+
 
 a:hover{
   color: rgb(4, 125, 125);
+
 }
-
-
-
+.usercomment {
+  font-style: normal;
+}
 
 ul, ol, .hobby {
   padding-left: 0;
@@ -101,14 +122,15 @@ ul, ol, .hobby {
     float: left;
     width: 30%;
     text-align: left;
-    padding-left: 3%;
-    padding-right: 3%;
-    padding-top: 5%;
+    padding-left: 1%;
+    padding-right: 4%;
+    padding-top: 7%;
 }
 
 .resultcolumn {
     float: left;
     width: 60%;
+    padding-right: 1%;
 }
 
 /* Clear floats after the columns */
@@ -117,11 +139,14 @@ ul, ol, .hobby {
     display: table;
     clear: both;
 }
+.row {
+  width: 1480px;
+}
 
 .kittyresult {
   border: 2px solid rgb(87, 87, 87);
   overflow: hidden;
-  padding: 10px;
+  padding: 5px;
   box-shadow: 5px 6px grey;
 }
 
@@ -138,19 +163,30 @@ ul, ol, .hobby {
   text-align: left;
   padding-left: 10px;
   padding: 4px;
+  margin-right: 0;
 }
 
 .kittyavatar {
   max-width: 90px;
   padding: 4px;
+  border-radius: 50%;
 }
 
 .kittyfact {
-  padding: 0px;
+  padding: 5px;
+
+
 }
 
 #search {
-  width: 1142px;
+  width: 550px;
+  position: relative;
+  left: 29.9vw;
+}
+#button {
+  position: relative;
+  left: 30vw;
+  color: red;
 }
 
 
@@ -165,5 +201,44 @@ ul, ol, .hobby {
   background: linear-gradient(to right, orange , red, yellow, cyan, blue, violet);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 5vw;
+  font-size: 4.5vw;
+  animation: blinker 1s linear infinite;
+}
+@keyframes blinker {
+  0% {
+      opacity: 0;
+  }
+  25% {
+    opacity: 0.3
+  }
+  50% {
+      opacity: 1;
+  }
+  75% {
+    opacity: 0.8
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+ #usershow {
+  float: left;
+  padding-left: 80px;
+
+
+}
+
+
+/* h4 {
+  float: left;
+} */
+
+
+#maptitle {
+  align: center;
+}
+
+.roundimage {
+  border-radius: 50%;
 }

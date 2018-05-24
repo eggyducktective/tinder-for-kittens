@@ -13,9 +13,12 @@ puts "Create Users"
 User.destroy_all
 
 u1 = User.create email: 'ben@ga.com', username: 'bearmaster', password: 'chicken', address: '1 Market street, Sydney'
-u2 = User.create email: 'anh@ga.com', username: 'eggyducktective', password: 'chicken', address: '569 George street, Sydney'
+u2 = User.create email: 'anh@ga.com', username: 'eggyducktective', password: 'chicken', address: '555 George street, Sydney'
 u3 = User.create email: 'spaceteddy@ga.com', username: 'teddyfromspace', password: 'chicken', address: '110 William Hart Cres, Penrith, Sydney'
-
+u4 = User.create email: 'bigteddy@ga.com', username: 'bigteddy', password: 'chicken', address: 'Albert St, Port Melbourne'
+u5 = User.create email: 'teddy@ga.com', username: 'teddy', password: 'chicken', address: 'George street, Brisbane, Australia'
+u6 = User.create email: 'tim@ga.com', username: 'timtam', password: 'chicken', address: 'Matthew St, Wollongong, Australia'
+u7 = User.create email: 'alex@ga.com', username: 'guccigang', password: 'chicken', address: '123 Bunda street, Canberra, ACT, Australia'
 
 puts "Created #{User.all.length} users."
 
@@ -23,17 +26,28 @@ puts "Created #{User.all.length} users."
 puts "Create cats"
 
 Cat.destroy_all
-c1 = Cat.create name: 'Pinky', image: 'https://images.pexels.com/photos/774731/pexels-photo-774731.jpeg', bio: 'A stinky cat'
-c2 = Cat.create name: 'Fluffy', image: 'https://images.pexels.com/photos/384555/pexels-photo-384555.jpeg', bio: 'A fluffy ball of fur'
-c3 = Cat.create name: 'Uh Oh', image: 'https://images.pexels.com/photos/127028/pexels-photo-127028.jpeg', bio: 'Oopz, I did it again'
-c4 = Cat.create name: 'Rom Rom', image: 'https://images.pexels.com/photos/86243/pexels-photo-86243.jpeg', bio: 'I love you more than I can say'
-c5 = Cat.create name: 'Cool Cat', image: 'https://images.pexels.com/photos/979247/pexels-photo-979247.jpeg', bio: 'I love exercising'
+c1 = Cat.create name: 'Pinky', image: 'https://images.pexels.com/photos/774731/pexels-photo-774731.jpeg', bio: 'Hello, my name is Stinky. I am 3 years old and live in Sydney.'
+c2 = Cat.create name: 'Fluffy', image: 'https://images.pexels.com/photos/384555/pexels-photo-384555.jpeg', bio: 'A fluffy ball of fur, I love playing with yarn.'
+c3 = Cat.create name: 'Uh Oh', image: 'https://images.pexels.com/photos/127028/pexels-photo-127028.jpeg', bio: 'Hey there, I guess I am just your average Aussie cat who loves getting loose in the weekend. I am looking for a muscular kitty to take me and my owner on a fishy date.'
+c4 = Cat.create name: 'Rom Rom', image: 'https://images.pexels.com/photos/86243/pexels-photo-86243.jpeg', bio: 'Bonjour mon amour, I am a romantic French kitty who loves listening to Sinatra and sipping on milk.'
+c5 = Cat.create name: 'Cool Cat', image: 'https://images.pexels.com/photos/979247/pexels-photo-979247.jpeg', bio: 'Wasssssssup, I love cardio. I can run like 10 km an hour. Looking for some lady cat to do squatz n oatz all day, every day.'
+c6 = Cat.create name: 'Helen', image: 'https://images.pexels.com/photos/399647/pexels-photo-399647.jpeg', bio: 'I am fierce. Here for fun only, because I am a strong, independent kitty who needs no male kitty in my life.'
+c7 = Cat.create name: 'Victor', image: 'https://images.pexels.com/photos/590490/pexels-photo-590490.jpeg', bio: 'I am a quiet cat. I do not like to have fun. I do not know why I am here.'
+c8 = Cat.create name: 'Bruce Wayne', image: 'https://images.pexels.com/photos/735423/pexels-photo-735423.jpeg', bio: 'I am no Batman, but I love playing with lights.'
+c9 = Cat.create name: 'Jackie', image: 'https://images.pexels.com/photos/412463/pexels-photo-412463.jpeg', bio: 'I am a single mother, looking for a male kitty who adores baby kitties.'
+c10 = Cat.create name: 'Cece', image: 'https://images.pexels.com/photos/137049/pexels-photo-137049.jpeg', bio: 'Hello, I consider myself a creative individual. I often find myself stuck in random places. But that does not matter. YOLO.'
+
+
 
 puts "Created #{Cat.all.length} cats."
 
 u1.cats << c1
 u2.cats << c2 << c3
 u3.cats << c4 << c5
+u4.cats << c6
+u5.cats << c8
+u6.cats << c9 << c10
+u7.cats << c7
 
 puts "created relationship between cats n users"
 
@@ -82,5 +96,10 @@ c2.hobbies << h8 << h9
 c3.hobbies << h3 << h7
 c4.hobbies << h4 << h5 << h6
 c5.hobbies << h10 << h9 << h2
+c6.hobbies << h1 << h5 << h7 << h8
+c7.hobbies << h4 << h3 << h1 << h5 << h10
+c8.hobbies << h2 << h1
+c9.hobbies << h3 << h5 << h2
+c10.hobbies << h1 << h6
 
 puts "Created relationship between cats and hobbies"
