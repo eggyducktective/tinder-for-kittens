@@ -2,7 +2,7 @@
 
 For my second project at Web Development Immersive, I'm building my own Tinder... (for cats). I had this idea for a couple of weeks while studying Ruby on Rails (Also, because I love to have an excuse to look at cat pics all day while doing my coding, and cat puns, they are purrrty fun :D)
 
-![alt text](https://github.com/eggyducktective/tinder-for-kittens/blob/master/app/assets/imgages/kitty-pun.jpg)
+![alt text](https://github.com/eggyducktective/tinder-for-kittens/blob/master/app/assets/images/kitty-pun.jpg)
 
 ## Sign up for this fun site now.
 
