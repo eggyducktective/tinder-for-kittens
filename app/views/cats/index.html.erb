@@ -14,7 +14,7 @@
     <% @cats.each do |cat| %>
       <div class="kittyresult">
         <div class="kittyimage">
-          <%= image_tag cat.image, :class => "kittyavatar" %>
+          <%= image_tag cat.image, :class => "kittyavatar"  %>
         </div>
         <div class="kittytext">
           Name: <%= link_to cat.name, cat_path(cat) %> <br>

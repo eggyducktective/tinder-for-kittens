@@ -21,7 +21,10 @@
   <ul>
     <% @cat.comments.each do |com| %>
       <li>
-        "<%= com.content %>". Posted by <div class="usercomment"><%= link_to com.user.username, user_path(@cat.user.id) %></div>
+        "<%= com.content %>". Posted by <div class="usercomment"><%= link_to com.user.username, user_path(@cat.user.id) %>
+        <% if @current_user.present? && com.user == @current_user %>
+          - <%= link_to "Delete this comment", comment_path(com.id), method: :delete %>
+        <% end  %></div>
       </li>
     <% end  %>
   </ul>
@@ -33,10 +36,28 @@
   <%= submit_tag 'Post Comment' %>
 <% end %>
 
+<% if @current_user.present? && @cat.user == @current_user %>
+<br>
+<strong>Meow Meow owener, wanna show some more purrrrty pictures of me?</strong>
+
+<%= form_tag(cat_path, multipart: true) do %>
+  <%= file_field_tag :kittyimage %>
+  <%= submit_tag 'Post Photo' %>
+<% end %>
+
+<% end %>
+
 <% if @cat.photos.present? %>
   <p><strong>Check out more of my cute photos:</strong></p>
-  <% @cat.photos.each do |photo| %>
-    <figure><%= cl_image_tag photo.image %></figure>
+  <% if @current_user.present? && @cat.user == @current_user %>
+    <% @cat.photos.each do |photo| %>
+      <%= cl_image_tag photo.image %> <%= link_to "Delete?😭", photo_path(photo.id), method: :delete %>
+      <br>
+    <% end %>
+  <% else %>
+    <% @cat.photos.each do |photo| %>
+      <figure><%= cl_image_tag photo.image %></figure>
+    <% end %>
   <% end %>
 <% end %>
 

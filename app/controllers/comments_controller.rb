@@ -26,8 +26,9 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    @comment.destroy
-    redirect_to comments_path
+    catid=get_comment.cat_id
+    get_comment.destroy
+    redirect_to cat_path(catid)
   end
 
   private

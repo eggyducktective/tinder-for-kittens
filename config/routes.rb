@@ -14,7 +14,10 @@ resources :users
 get "/profile" => "users#profile"
 post "/search" => "cats#catsearch"
 
-post "/cats/:id" => "cats#comment"
+post "/cats/:id" => "cats#update_kitty"
+
+delete "/photos/:id" => "photos#destroy"
+delete "/comments/:id" => "comments#destroy"
 
 
 

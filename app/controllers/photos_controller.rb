@@ -1,4 +1,5 @@
 class PhotosController < ApplicationController
+  before_action :get_photo, only: %i[show]
   def new
   end
 
@@ -9,6 +10,7 @@ class PhotosController < ApplicationController
   end
 
   def index
+    @photos = Photo.all
   end
 
   def edit
@@ -18,5 +20,14 @@ class PhotosController < ApplicationController
   end
 
   def destroy
+    catid=get_photo.cat_id
+    get_photo.destroy
+    redirect_to cat_path(catid)
+  end
+
+  private
+
+  def get_photo
+    @photo = Photo.find params[:id]
   end
 end

@@ -75,14 +75,25 @@ class CatsController < ApplicationController
     render :results
   end
 
-  def comment
-    com = Comment.new
-    com.content = params[:comment].to_s
-    com.user_id = @current_user.id
-    com.cat_id = params[:id].to_s
-    com.save
-    redirect_to cat_path(get_cat.id)
+
+  def update_kitty
+    if params[:comment]
+      com = Comment.new
+      com.content = params[:comment].to_s
+      com.user_id = @current_user.id
+      com.cat_id = params[:id].to_s
+      com.save
+      redirect_to cat_path(get_cat.id)
+    elsif params[:kittyimage]
+      photo = Photo.new
+      photo.cat_id = params[:id]
+      req = Cloudinary::Uploader.upload(params[:kittyimage])
+      photo.image = req['public_id']
+      photo.save
+      redirect_to cat_path(get_cat.id)
+    end
   end
+
 
   def random_cat_fact
       url = "https://catfact.ninja/fact"

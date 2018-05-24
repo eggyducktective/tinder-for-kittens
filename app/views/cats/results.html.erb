@@ -6,15 +6,18 @@ We found no match for "<%= @search_word %>"
 <% end %>
 
 <div class="indexcolumn">
-  Criteria for for purrrfect match:
-  <br>
-  <br>
-  Criteria:<br>
-  is evil<br>
-  hates humans<br>
-  All<br>
-  searchbox (ENTER)
-  (place previously entered search criteria)
+Filter by hobby:
+<%= form_tag cats_path do %>
+  <% Hobby.all.each do |h| %>
+  <ul>
+    <li>
+      <%= check_box_tag :hobbyid, h.id %>
+      <%= h.name %>
+    </li>
+  </ul>
+  <% end %>
+<%= submit_tag 'Search Kittens now' %>
+<% end %>
 </div>
 
 <div class="resultcolumn">

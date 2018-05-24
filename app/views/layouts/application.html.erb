@@ -16,7 +16,7 @@
     <div class="header">
       <div id="nav">
         <% if @current_user.present? %>
-          Welcome, <%= @current_user.username %>
+          Welcome, <%= link_to @current_user.username, user_path(@current_user.id) %> - 
           <%= link_to 'Logout', login_path, method: :delete %>
           |
           <%= link_to 'All Kitties', cats_path %>
@@ -41,7 +41,7 @@
       <% end %>
     </div>
     <div class="main">
-    
+
 
     <%= yield %>
 </div>
