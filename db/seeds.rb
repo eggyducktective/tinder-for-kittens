@@ -34,7 +34,7 @@ c5 = Cat.create name: 'Cool Cat', image: 'https://images.pexels.com/photos/97924
 c6 = Cat.create name: 'Helen', image: 'https://images.pexels.com/photos/399647/pexels-photo-399647.jpeg', bio: 'I am fierce. Here for fun only, because I am a strong, independent kitty who needs no male kitty in my life.'
 c7 = Cat.create name: 'Victor', image: 'https://images.pexels.com/photos/590490/pexels-photo-590490.jpeg', bio: 'I am a quiet cat. I do not like to have fun. I do not know why I am here.'
 c8 = Cat.create name: 'Bruce Wayne', image: 'https://images.pexels.com/photos/735423/pexels-photo-735423.jpeg', bio: 'I am no Batman, but I love playing with lights.'
-c9 = Cat.create name: 'Jackie', image: 'https://images.pexels.com/photos/412463/pexels-photo-412463.jpeg', bio: 'I am a single mother, looking for a male kitty who adores baby kitties.'
+c9 = Cat.create name: 'Linda', image: 'https://images.pexels.com/photos/412463/pexels-photo-412463.jpeg', bio: 'I am a single mother, looking for a male kitty who adores baby kitties.'
 c10 = Cat.create name: 'Cece', image: 'https://images.pexels.com/photos/137049/pexels-photo-137049.jpeg', bio: 'Hello, I consider myself a creative individual. I often find myself stuck in random places. But that does not matter. YOLO.'
 
 
