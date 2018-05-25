@@ -26,7 +26,7 @@ puts "Created #{User.all.length} users."
 puts "Create cats"
 
 Cat.destroy_all
-c1 = Cat.create name: 'Pinky', image: 'https://images.pexels.com/photos/774731/pexels-photo-774731.jpeg', bio: 'Hello, my name is Stinky. I am 3 years old and live in Sydney.'
+c1 = Cat.create name: 'Pinky', image: 'https://images.pexels.com/photos/774731/pexels-photo-774731.jpeg', bio: 'Hello, my name is Pinky. I am 3 years old and live in Sydney.'
 c2 = Cat.create name: 'Fluffy', image: 'https://images.pexels.com/photos/384555/pexels-photo-384555.jpeg', bio: 'A fluffy ball of fur, I love playing with yarn.'
 c3 = Cat.create name: 'Uh Oh', image: 'https://images.pexels.com/photos/127028/pexels-photo-127028.jpeg', bio: 'Hey there, I guess I am just your average Aussie cat who loves getting loose in the weekend. I am looking for a muscular kitty to take me and my owner on a fishy date.'
 c4 = Cat.create name: 'Rom Rom', image: 'https://images.pexels.com/photos/86243/pexels-photo-86243.jpeg', bio: 'Bonjour mon amour, I am a romantic French kitty who loves listening to Sinatra and sipping on milk.'
@@ -64,10 +64,10 @@ o6 = Comment.create content: 'This cat looks like he is always doing something n
 
 puts "Created #{Comment.all.length} comments."
 
-c1.comments << o1 << o2
+c1.comments << o1
 c5.comments << o5 << o3
 c3.comments << o6
-c4.comments << o4
+c4.comments << o4 << o2
 
 
 u1.comments << o1 << o2

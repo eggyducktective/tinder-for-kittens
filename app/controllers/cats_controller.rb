@@ -36,11 +36,9 @@ class CatsController < ApplicationController
     @fact = random_cat_fact
   end
 
-  def edit
-  end
 
   def update
-    # raise "hell"
+
     cat = Cat.find(params[:id])
     if params[:file].present?
       req = Cloudinary::Uploader.upload(params[:file])
@@ -110,8 +108,10 @@ class CatsController < ApplicationController
 
   private
 
-
-
+  def cat_params
+    params.require(:cat).permit(:name, :bio, :image, :hobbies)
+  end
+  
   def get_cat
     @cat = Cat.find params[:id]
   end
