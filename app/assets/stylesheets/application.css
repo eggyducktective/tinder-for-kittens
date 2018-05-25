@@ -155,7 +155,8 @@ ul, ol, .hobby {
     clear: both;
 }
 .row {
-  width: 1289px;
+
+  margin: 0;
 }
 
 .kittyresult {
