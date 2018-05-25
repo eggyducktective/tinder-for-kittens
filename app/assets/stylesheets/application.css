@@ -12,7 +12,6 @@
  *
  *= require_tree .
  *= require_self
- *= require mapbox
  */
 
 @import url('https://fonts.googleapis.com/css?family=Indie+Flower');
@@ -91,8 +90,12 @@ li {
 
 #nav {
   float: left;
+  padding-top: 10px;
 }
 
+#notloggedin {
+  padding-top: 10px;
+}
 
 a {
   text-transform: uppercase;
@@ -122,11 +125,15 @@ ul, ol, .hobby {
 
 .indexcolumn {
     float: left;
-    width: 30%;
+    width: 20%;
     text-align: left;
     padding-left: 1%;
     padding-right: 4%;
     padding-top: 7%;
+}
+
+.indexcolumn.results{
+  width: 30%;
 }
 
 .resultcolumn {
@@ -150,7 +157,7 @@ ul, ol, .hobby {
 .kittyresult {
   border: 2px solid rgb(87, 87, 87);
   overflow: hidden;
-  padding: 5px;
+  /* padding: 5px; */
   box-shadow: 5px 6px grey;
 }
 
@@ -180,15 +187,20 @@ ul, ol, .hobby {
   padding: 5px;
 }
 
-#search {
+.search {
   width: 550px;
   position: relative;
   left: 29.9vw;
 }
+
+#search {
+  width: 200px;
+}
+
 #button {
   position: relative;
-  left: 30vw;
   color: red;
+  display: inline-block;
 }
 .button {
   align: center;

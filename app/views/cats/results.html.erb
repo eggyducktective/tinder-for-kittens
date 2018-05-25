@@ -5,18 +5,22 @@ We found no match for "<%= @search_word %>"
 <% end %>
 </div>
 
-<div class="indexcolumn">
+<div class="indexcolumn results">
 <h4>Filter by hobby:</h4>
-<%= form_tag cats_path do %>
+<%= form_tag search_path do %>
   <% Hobby.all.each do |h| %>
   <ul>
     <li>
-      <%= check_box_tag :hobbyid, h.id %>
-      <%= h.name %>
+
+      <%= check_box_tag "hobby_ids[]", h.id, params[:hobby_ids].present? && params[:hobby_ids].include?( h.id.to_s ), id: h.id %>
+      <%= label_tag h.id, h.name %>
+
     </li>
   </ul>
   <% end %>
-<div class="button"><%= submit_tag 'Search Kittens now' %></div>
+  <%= hidden_field_tag :search, @search_word %>
+
+<div class="button"><%= submit_tag 'Filter Results' %></div>
 <% end %>
 </div>
 

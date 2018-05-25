@@ -65,12 +65,19 @@ class CatsController < ApplicationController
 
   def catsearch
 
-    @search_word = params[:search].to_s
+    @search_word = params[:search]
 
-    kittysearch = Cat.ransack(name_or_bio_cont_any: @search_word.split(" "))
+    if params[:hobby_ids].present?
+      # filter an existing text search (see https://stackoverflow.com/a/37714789 for the join magic)
+      @kittyresults = Cat.ransack(name_or_bio_cont_any: @search_word.split(" ")).result.joins(:cats_hobbies).where( cats_hobbies: { hobby_id: params[:hobby_ids] }  ).uniq
 
-    @kittyresults = kittysearch.result
+    else
 
+      # perform new text search
+      @kittyresults = Cat.ransack(name_or_bio_cont_any: @search_word.split(" ")).result
+      # raise 'egg'
+
+    end
 
     render :results
   end
@@ -103,9 +110,7 @@ class CatsController < ApplicationController
 
   private
 
-  def cat_params
-    params.require(:cat).permit(:name, :bio)
-  end
+
 
   def get_cat
     @cat = Cat.find params[:id]

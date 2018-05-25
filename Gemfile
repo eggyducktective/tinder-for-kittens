@@ -61,4 +61,3 @@ gem 'rails_12factor', group: :production
 gem 'cloudinary'
 gem 'httparty'
 gem 'geocoder'
-gem 'mapbox-rails'

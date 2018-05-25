@@ -1,12 +1,13 @@
 # Kitty Dating
 
 For my second project at Web Development Immersive, I'm building my own Tinder... (for cats). I had this idea for a couple of weeks while studying Ruby on Rails (Also, because I love to have an excuse to look at cat pics all day while doing my coding, and cat puns, they are purrrty fun :D)
+You can sign up for your adorable cat(s) and begin your journey. The main features include: Upload photos of your cats (the more, the better, because it's impurrrtant for cats to look at other hot kitties nearby). You as an user can choose to include your geo location or not (makes it easier to find a match).
 
 ![alt text](https://github.com/eggyducktective/tinder-for-kittens/blob/master/app/assets/images/kitty-pun.jpg)
 
 ## Sign up for this fun site now.
 
-Get ready to embark on a quest to find your kitty(ies) their true love: https://kittydating.herokuapp.com/welcome.html
+Get ready to embark on a quest to find your kitty(ies) their true love: [Kitty Tinder](https://kittydating.herokuapp.com/welcome.html)
 
 ## Ruby version:
 
@@ -15,6 +16,8 @@ ruby 2.4.1p111
 ## System dependencies
 
 bundle install
+
+Except for standard Gems that come with a Rails project, I installed 'annotate' (to annotate all models, tests, fixtures and factories), 'pry-rails' (to use pry as rails console ), 'pry-byebug' (to add step by step debugging), 'ransack' (to get a quick searching table), 'cloudinary' (to let users upload photos from their computer), 'httparty' (to look up cat facts api), 'geocoder' (to use map)
 
 See Gemfile/Gemfile.lock
 

@@ -16,24 +16,26 @@
     <div class="header">
       <div id="nav">
         <% if @current_user.present? %>
-          Welcome, <%= link_to @current_user.username, user_path(@current_user.id) %> - 
+          Welcome, <%= link_to @current_user.username, user_path(@current_user.id) %> -
           <%= link_to 'Logout', login_path, method: :delete %>
-          |
+          <br>
           <%= link_to 'All Kitties', cats_path %>
+          |
+          <%= link_to 'All Hobbies', hobbies_path %>
           |
           <%= link_to 'Register A New Kitty', new_cat_path %>
 
         <% else %>
 
-          <%= link_to 'Login', login_path %>
+          <div id="notloggedin"><%= link_to 'Login', login_path %>
           |
-          <%= link_to 'Sign Up', new_user_path %>
+          <%= link_to 'Sign Up', new_user_path %></div>
         <% end %>
      </div>
        <h4 id="logo">❤️ Kitty Dating ❤️ </h4>
    </div>
 
-    <div id="search">
+    <div class="search">
       <%= form_tag '/search' do %>
         <%= search_field_tag :search, nil, placeholder: "Are you ready to look for love?" %>
 
