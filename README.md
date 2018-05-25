@@ -2,6 +2,7 @@
 
 For my second project at Web Development Immersive, I'm building my own Tinder... (for cats). I had this idea for a couple of weeks while studying Ruby on Rails (Also, because I love to have an excuse to look at cat pics all day while doing my coding, and cat puns, they are purrrty fun :D)
 You can sign up for your adorable cat(s) and begin your journey. The main features include: Upload photos of your cats (the more, the better, because it's impurrrtant for cats to look at other hot kitties nearby). You as an user can choose to include your geo location or not (makes it easier to find a match).
+There is a search bar in which you can do a simple search that matches other kitties' name or bio. And another filtered hobbies search on top of that.
 
 ![alt text](https://github.com/eggyducktective/tinder-for-kittens/blob/master/app/assets/images/kitty-pun.jpg)
 
@@ -70,7 +71,7 @@ $ heroku run rails db:seed
 
 ## Approach:
 
-As always I started with CSS, I love fiddling with it. And it helped me with my creativity process. I created 3 models to begin with and slowly built from there.
+As always I started with CSS, I love fiddling with it. And it helped me with my creativity process. I created 3 models to begin with and slowly built from there. 
 
 ## Technologies used:
 - HTML
