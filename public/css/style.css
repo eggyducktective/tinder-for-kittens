@@ -126,3 +126,13 @@ img {
   max-width: 200px;
   border-radius: 50%;
 }
+
+a {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: rgb(221, 112, 0);
+}
+
+a:hover {
+  color: rgb(4, 125, 125);
+}
