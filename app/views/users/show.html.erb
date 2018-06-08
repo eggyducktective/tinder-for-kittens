@@ -1,13 +1,15 @@
 <br><br><br><br><br>
 <h3 id="usershow">Great to see you here!<br>
-I am <%= @user.username %>
+I am "<%= @user.username %>"
 
-<p>My best friends:</p>
+<% if @user.cats.present? %>
+  <p>My best friends:</p>
 
-  <% @user.cats.each do |cat| %>
-  <li>
-    <strong><%= link_to cat.name, cat_path(cat)  %></strong>
-  </li>
+    <% @user.cats.each do |cat| %>
+      <li>
+        <strong><%= link_to cat.name, cat_path(cat)  %></strong>
+      </li>
+    <% end %>
   <% end %>
   <div id="maptitle">Hit me up when you're in the area. We can have some kitty playdate.</div>
 </h3>
@@ -29,7 +31,7 @@ I am <%= @user.username %>
 
     margin: 0;
     padding: 5px 5px;
-  
+
   }
 </style>
 <script>

@@ -1,40 +1,44 @@
-<div class="searchresult"><% if @kittyresults.present? %>
-<h3>Results for: "<%= @search_word %>"</h3>
+<div class="searchresult">
+<% if @kittyresults.present? %>
+  <h3>Results for: "<%= @search_word %>"</h3>
 <% else %>
-We found no match for "<%= @search_word %>"
+  We found no match for "<%= @search_word %>"
 <% end %>
 </div>
 
 <div class="indexcolumn results">
-<h4>Filter by hobby:</h4>
-<%= form_tag search_path do %>
-  <% Hobby.all.each do |h| %>
-  <ul>
-    <li>
+<% if @kittyresults.present? %>
+  <h4>Filter by hobby:</h4>
 
-      <%= check_box_tag "hobby_ids[]", h.id, params[:hobby_ids].present? && params[:hobby_ids].include?( h.id.to_s ), id: h.id %>
-      <%= label_tag h.id, h.name %>
+  <%= form_tag search_path do %>
+    <% Hobby.all.each do |h| %>
+    <ul>
+      <li>
 
-    </li>
-  </ul>
+        <%= check_box_tag "hobby_ids[]", h.id, params[:hobby_ids].present? && params[:hobby_ids].include?( h.id.to_s ), id: h.id %>
+        <%= label_tag h.id, h.name %>
+
+      </li>
+    </ul>
+    <% end %>
+    <%= hidden_field_tag :search, @search_word %>
+
+  <div class="button"><%= submit_tag 'Filter Results' %></div>
   <% end %>
-  <%= hidden_field_tag :search, @search_word %>
+  </div>
 
-<div class="button"><%= submit_tag 'Filter Results' %></div>
-<% end %>
-</div>
-
-<div class="resultcolumn">
-  <% @kittyresults.each do |cat| %>
-    <div class="kittyresult">
-      <div class="kittyimage">
-        <%= image_tag cat.image, :class => "kittyavatar" %>
+  <div class="resultcolumn">
+    <% @kittyresults.each do |cat| %>
+      <div class="kittyresult">
+        <div class="kittyimage">
+          <%= image_tag cat.image, :class => "kittyavatar" %>
+        </div>
+        <div class="kittytext">
+          Name: <%= link_to cat.name, cat_path(cat) %> <br>
+          Bio: <%= cat.bio %>
+        </div>
       </div>
-      <div class="kittytext">
-        Name: <%= link_to cat.name, cat_path(cat) %> <br>
-        Bio: <%= cat.bio %>
-      </div>
-    </div>
-    <br>
+      <br>
+      <% end %>
   <% end %>
 </div>
