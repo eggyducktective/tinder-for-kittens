@@ -26,16 +26,16 @@ puts "Created #{User.all.length} users."
 puts "Create cats"
 
 Cat.destroy_all
-c1 = Cat.create name: 'Pinky', image: 'https://images.pexels.com/photos/774731/pexels-photo-774731.jpeg', bio: 'Hello, my name is Pinky. I am 3 years old and live in Sydney.'
-c2 = Cat.create name: 'Fluffy', image: 'https://images.pexels.com/photos/384555/pexels-photo-384555.jpeg', bio: 'A fluffy ball of fur, I love playing with yarn.'
-c3 = Cat.create name: 'Uh Oh', image: 'https://images.pexels.com/photos/127028/pexels-photo-127028.jpeg', bio: 'Hey there, I guess I am just your average Aussie cat who loves getting loose in the weekend. I am looking for a muscular kitty to take me and my owner on a fishy date.'
-c4 = Cat.create name: 'Rom Rom', image: 'https://images.pexels.com/photos/86243/pexels-photo-86243.jpeg', bio: 'Bonjour mon amour, I am a romantic French kitty who loves listening to Sinatra and sipping on milk.'
-c5 = Cat.create name: 'Cool Cat', image: 'https://images.pexels.com/photos/979247/pexels-photo-979247.jpeg', bio: 'Wasssssssup, I love cardio. I can run like 10 km an hour. Looking for some lady cat to do squatz n oatz all day, every day.'
-c6 = Cat.create name: 'Helen', image: 'https://images.pexels.com/photos/399647/pexels-photo-399647.jpeg', bio: 'I am fierce. Here for fun only, because I am a strong, independent kitty who needs no male kitty in my life.'
-c7 = Cat.create name: 'Victor', image: 'https://images.pexels.com/photos/590490/pexels-photo-590490.jpeg', bio: 'I am a quiet cat. I do not like to have fun. I do not know why I am here.'
-c8 = Cat.create name: 'Bruce Wayne', image: 'https://images.pexels.com/photos/735423/pexels-photo-735423.jpeg', bio: 'I am no Batman, but I love playing with lights.'
-c9 = Cat.create name: 'Linda', image: 'https://images.pexels.com/photos/412463/pexels-photo-412463.jpeg', bio: 'I am a single mother, looking for a male kitty who adores baby kitties.'
-c10 = Cat.create name: 'Cece', image: 'https://images.pexels.com/photos/137049/pexels-photo-137049.jpeg', bio: 'Hello, I consider myself a creative individual. I often find myself stuck in random places. But that does not matter. YOLO.'
+c1 = Cat.create name: 'Pinky', image: '../img/pexels-photo-774731.jpeg', bio: 'Hello, my name is Pinky. I am 3 years old and live in Sydney.'
+c2 = Cat.create name: 'Fluffy', image: '../img/pexels-photo-384555.jpeg', bio: 'A fluffy ball of fur, I love playing with yarn.'
+c3 = Cat.create name: 'Uh Oh', image: '../img/pexels-photo-127028.jpeg', bio: 'Hey there, I guess I am just your average Aussie cat who loves getting loose in the weekend. I am looking for a muscular kitty to take me and my owner on a fishy date.'
+c4 = Cat.create name: 'Rom Rom', image: '../img/pexels-photo-86243.jpeg', bio: 'Bonjour mon amour, I am a romantic French kitty who loves listening to Sinatra and sipping on milk.'
+c5 = Cat.create name: 'Cool Cat', image: '../img/pexels-photo-979247.jpeg', bio: 'Wasssssssup, I love cardio. I can run like 10 km an hour. Looking for some lady cat to do squatz n oatz all day, every day.'
+c6 = Cat.create name: 'Helen', image: '../img/pexels-photo-399647.jpeg', bio: 'I am fierce. Here for fun only, because I am a strong, independent kitty who needs no male kitty in my life.'
+c7 = Cat.create name: 'Victor', image: '../img/pexels-photo-590490.jpeg', bio: 'I am a quiet cat. I do not like to have fun. I do not know why I am here.'
+c8 = Cat.create name: 'Bruce Wayne', image: '../img/pexels-photo-735423.jpeg', bio: 'I am no Batman, but I love playing with lights.'
+c9 = Cat.create name: 'Linda', image: '../img/pexels-photo-412463.jpeg', bio: 'I am a single mother, looking for a male kitty who adores baby kitties.'
+c10 = Cat.create name: 'Cece', image: '../img/pexels-photo-137049.jpeg', bio: 'Hello, I consider myself a creative individual. I often find myself stuck in random places. But that does not matter. YOLO.'
 
 
 
@@ -110,11 +110,11 @@ puts "Created relationship between cats and hobbies"
 Photo.destroy_all
 
 
-p1 = Photo.create image: 'https://i.ytimg.com/vi/Bohsw3nWlrc/maxresdefault.jpg'
-p2 = Photo.create image: 'https://images.backyardcatenclosures.com.au/app/uploads/2016/09/5-reasons-to-love-british-shorthair-cats1024X400.jpg'
-p3 = Photo.create image: 'https://assets.rbl.ms/4151263/980x.jpg'
-p4 = Photo.create image: 'https://i.pinimg.com/originals/0e/ed/34/0eed3407d1c05e799a21adff034248ca.jpg'
-p5 = Photo.create image: 'https://static.boredpanda.com/blog/wp-content/uploads/2016/08/12531045_1001926639898442_425771496_n-57c047e530687__700.jpg'
+p1 = Photo.create image: '../img/maxresdefault.jpg'
+p2 = Photo.create image: '../img/5-reasons-to-love-british-shorthair-cats1024X400.jpg'
+p3 = Photo.create image: '../img/980x.jpg'
+p4 = Photo.create image: '../img/0eed3407d1c05e799a21adff034248ca.jpg'
+p5 = Photo.create image: '../img/12531045_1001926639898442_425771496_n-57c047e530687__700.jpg'
 
 
 
